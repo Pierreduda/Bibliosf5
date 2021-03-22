@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LivreController
+{% endblock %}
+
+{% block body %}
+	<h1>Détail du livre n°
+		{{ livre.id }}</h1>
+
+	<ul class="list-group">
+		<li class="list-group">
+			<strong>Titre:
+			</strong>
+			{{livre.titre}}
+		</li>
+		<li class="list-group">
+			<strong>Auteur:
+			</strong>
+			{{livre.auteur}}
+		</li>
+	</ul>
+
+
+	<div class="row mt-3">
+		<a href="{{ path("livre") }}" class="btn btn-info">Retour</a>
+	</div>
+{% endblock %}

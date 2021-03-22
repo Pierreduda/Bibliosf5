@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Abonne
+{% endblock %}
+
+{% block body %}
+	<h1>Détail du Abonne n°
+		{{ abonne.id }}</h1>
+
+	<ul class="list-group">
+		<li class="list-group">
+			<strong>Pseudo:
+			</strong>
+			{{abonne.pseudo}}
+		</li>
+		<li class="list-group">
+			<strong>Password:
+			</strong>
+			{{abonne.password}}
+		</li>
+		<li class="list-group">
+			<strong>Nom:
+			</strong>
+			{{abonne.nom}}
+		</li>
+		<li class="list-group">
+			<strong>Prenom:
+			</strong>
+			{{abonne.prenom}}
+		</li>
+	</ul>
+
+
+	<div class="row mt-3">
+		<a href="{{ path("abonne") }}" class="btn btn-info">Retour</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche {% endblock %}
+
+ {% block body %}
+
+
+{% if formRech is defined %}
+{{form_start(formRech) }}
+{{form_end(formRech)}}    
+{% else %}
+{{form(recherche)}}
+ <h2>  Resultat de la recherche livre pour: {{ mot }}</h2>
+<div class="card-columns">
+	{% for livre in liste_livres %}
+		{#{% set l = livre %}#}
+		{% include 'livre/vignette.html.twig' with  {'l': livre} %}
+	{% endfor %}
+</div>
+ <h2>  Resultat de la recherche Abonne pour: {{ mot }}</h2>
+<div class="card-columns">
+	{% for abonne in liste_abonnes %}
+		{#{% set a = abonne %}#}
+		{% include 'abonne/vignette.html.twig' with  {'a': abonne} %}
+	{% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{# extends: signifie que le fichier actuel herite du fichier base.html.twig 
+    dans une vue qui "herite" d'une autre vue, on ne peut pas mettre de contenu en dehors d'1 block
+#}
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <p> Bonjour, {{prenom}}!</p>
+{% endblock %}
+
+{% block title %}Salutation! {% endblock %}
+
+{% block bye %}<h2>Au revoir</h2>{% endblock %}
+
+{% block stylesheets %}
+{# la fonction parent() permet de retourner du block de la vue parent, ce qui permet de ne pas l'écraser #}
+{{ parent () }}
+<style>
+    p{
+        color:red;
+    }
+</style>
+
+{% endblock %}

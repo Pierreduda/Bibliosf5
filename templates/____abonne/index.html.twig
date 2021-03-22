@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AbonneController
+{% endblock %}
+
+{% block body %}
+	<table class="table tablebordered table-striped">
+		<thead class="thead-dark">
+			<th>ID</th>
+			<th>Pseudo</th>
+            <th>Roles</th>
+			{#<th>Password</th>#}
+			<th>Nom</th>
+            <th>Prenom</th>
+            <th>action</th>
+		</thead>
+		<tbody>
+			{% for abonne in liste_abonnes %}
+				<tr>
+					<td>{{abonne.id}}</td>
+					<td>{{abonne.pseudo}}</td>
+					<td>{{abonne.roles ? abonne.roles |json_encode: ''}}</td>
+                   {#<td>{{abonne.password}}</td>#} 
+                    <td>{{abonne.nom}}</td>
+                    <td>{{abonne.prenom}}</td>
+					<td>
+						<a href="{{ path("affichage", {id: abonne.id}) }}"><i class="fas fa-search"></i></a>
+						<a href="{{ path("abonne_modifier", {id: abonne.id}) }}"><i class="far fa-edit"></i></a>
+						<a href="{{ path("abonne_supprimer", {id: abonne.id}) }}"><i class="far fa-trash-alt"></i></a>
+					</td>
+				</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{{dump(post)}}
+	<table>
+
+		{% for valeur in post %}
+			<tr>
+				<td>
+					{{ valeur }}
+				</td>
+			</tr>
+		{% endfor %}
+
+	</table><hr>
+	<p>email:
+		{{post.email}}</p><br>
+	<p>mdp:
+		{{post.mdp}}</p><br>
+	<p>adresse:
+		{{post.adresse}}</p><br>
+	<p>ville:
+		{{post.ville}}</p><br>
+	<p>cp:
+		{{post.cp}}</p><br>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+                 <p>le resultat du calcul est {{a}} + {{b}} est egale à {{ result }}</p>
+                <p>le détail du calcul est {{ calcul }}</p>
+                <p>le resultat du calcul {{a ~"+" ~ b ~ " est égal à " ~ result}}</p>
+<hr>
+
+{% endblock %}

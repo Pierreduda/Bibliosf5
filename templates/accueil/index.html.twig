@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+
+<div class="card-columns">
+	{% for livre in liste_livres %}
+		{#{% set l = livre %}#}
+		{% include 'livre/vignette.html.twig' with  {'l': livre} %}
+
+	{% endfor %}
+</div>
+
+
+{% endblock %}
